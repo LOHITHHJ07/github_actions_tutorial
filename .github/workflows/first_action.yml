@@ -1,0 +1,19 @@
+name: First Action Workflow
+
+# Trigger the workflow on push to the 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+# Define the jobs to run in this workflow
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Environment where the job will run
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Action to check out the repository code
+
+    - name: Print Hello World
+      run: echo "Hello, World!"  # Command to print "Hello, World!" to the console
